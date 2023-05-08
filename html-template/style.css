@@ -1,0 +1,153 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planet-div {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-color: white;
+  background-color: transparent;
+  animation: rotation 6s linear infinite;
+}
+
+.planet-img {
+  border-radius: 50%;
+  border: 2px solid;
+}
+
+#mercury-div {
+  height: 0.72375rem;
+  width: 0.72375rem;
+  animation-duration: 6s;
+}
+
+#mercury-img {
+  height: 0.19145rem;
+  width: 0.19145rem;
+  background-color: grey;
+  transform: translate(0.361875rem);
+}
+
+#venus-div {
+  height: 1.3525rem;
+  width: 1.3525rem;
+  animation-duration: 6s;
+}
+
+#venus-img {
+  height: 0.47495rem;
+  width: 0.47495rem;
+  background-color: orange;
+  transform: translateX(0.67625rem);
+}
+
+#earth-div {
+  height: 1.8625rem;
+  width: 1.8625rem;
+  animation-duration: 6s;
+}
+
+#earth-img {
+  height: 0.5rem;
+  width: 0.5rem;
+  background-color: greenyellow;
+  transform: translateX(0.93125rem);
+}
+
+#mars-div {
+  height: 2.85rem;
+  width: 2.85rem;
+  animation-duration: 6s;
+}
+
+#mars-img {
+  height: 0.265rem;
+  width: 0.265rem;
+  background-color: orangered;
+  transform: translateX(1.425rem);
+}
+
+#jupiter-div {
+  height: 9.73125rem;
+  width: 9.73125rem;
+  animation-duration: 6s;
+}
+
+#jupiter-img {
+  height: 5.4865rem;
+  width: 5.4865rem;
+  background-color: lightblue;
+  transform: translateX(4.865625rem);
+}
+
+#saturn-div {
+  height: 17.9rem;
+  width: 17.9rem;
+  animation-duration: 6s;
+}
+
+#saturn-img {
+  height: 4.5701rem;
+  width: 4.5701rem;
+  background-color: yellow;
+  transform: translateX(8.95rem);
+}
+
+#uranus-div {
+  height: 35.8375rem;
+  width: 35.8375rem;
+  animation-duration: 6s;
+}
+
+#uranus-img {
+  height: 1.99rem;
+  width: 1.99rem;
+  background-color: burlywood;
+  transform: translateX(17.91875rem);
+}
+
+#neptune-div {
+  height: 56.4375rem;
+  width: 56.4375rem;
+  animation-duration: 6s;
+}
+
+#neptune-img {
+  height: 1.932rem;
+  width: 1.932rem;
+  background-color: blue;
+  transform: translateX(28.21875rem);
+}
+
+@keyframes rotation {
+  from {
+    rotate: 0deg;
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+    rotate: 360deg;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
