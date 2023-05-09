@@ -13,9 +13,39 @@ body {
 }
 
 main {
+  height: 100%;
+  width: 100%;
+}
+
+h1, p {
+  color: white;
+  text-align: center;
+}
+
+#planets {
   display: flex;
   justify-content: center;
   align-items: center;
+  translate: 0 -100px;
+  height: 100%;
+  width: 100%;
+}
+
+#next {
+  translate: 0 -100px;
+}
+
+#sun {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 221, 0);
+  width: 4.6714285714rem;
+  height: 4.6714285714rem;
+  box-shadow: 0 2px 20px yellow, 0 -2px 20px yellow, 2px 0 20px yellow, -2px 0 20px yellow;
+  border-color: transparent;
 }
 
 .planet-div {
@@ -26,127 +56,129 @@ main {
   align-items: center;
   border: 1px solid;
   border-color: white;
-  background-color: transparent;
-  animation: rotation 6s linear infinite;
 }
 
 .planet-img {
-  border-radius: 50%;
-  border: 2px solid;
+  border-radius: 100%;
+  border: 1px solid transparent;
+}
+
+.rotation {
+  animation: rotation linear infinite;
 }
 
 #mercury-div {
-  height: 0.72375rem;
-  width: 0.72375rem;
-  animation-duration: 6s;
+  height: 8.2714285714em;
+  width: 8.2714285714em;
+  animation-duration: 2.9333333333s;
 }
 
 #mercury-img {
-  height: 0.19145rem;
-  width: 0.19145rem;
-  background-color: grey;
-  transform: translate(0.361875rem);
+  height: 0.57435rem;
+  width: 0.57435rem;
+  background-color: rgb(191, 187, 187);
+  translate: 0 4.1357142857em;
+  animation-duration: 2.9333333333s;
 }
 
 #venus-div {
-  height: 1.3525rem;
-  width: 1.3525rem;
-  animation-duration: 6s;
+  height: 10.82em;
+  width: 10.82em;
+  animation-duration: 7.4666666667s;
 }
 
 #venus-img {
-  height: 0.47495rem;
-  width: 0.47495rem;
-  background-color: orange;
-  transform: translateX(0.67625rem);
+  height: 1.41rem;
+  width: 1.41rem;
+  background-color: rgb(244, 237, 224);
+  translate: 5.41em 0;
+  animation-duration: 7.4666666667s;
 }
 
 #earth-div {
-  height: 1.8625rem;
-  width: 1.8625rem;
-  animation-duration: 6s;
+  height: 14.9em;
+  width: 14.9em;
+  animation-duration: 12.1666666667s;
 }
 
 #earth-img {
-  height: 0.5rem;
-  width: 0.5rem;
-  background-color: greenyellow;
-  transform: translateX(0.93125rem);
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: rgb(115, 135, 194);
+  translate: 0 -7.45em;
 }
 
 #mars-div {
-  height: 2.85rem;
-  width: 2.85rem;
-  animation-duration: 6s;
+  height: 17.5384615385em;
+  width: 17.5384615385em;
+  animation-duration: 22.9s;
 }
 
 #mars-img {
-  height: 0.265rem;
-  width: 0.265rem;
-  background-color: orangered;
-  transform: translateX(1.425rem);
+  height: 0.795rem;
+  width: 0.795rem;
+  background-color: rgb(252, 153, 117);
+  translate: -8.7692307692em 0;
 }
 
 #jupiter-div {
-  height: 9.73125rem;
-  width: 9.73125rem;
-  animation-duration: 6s;
+  height: 23.5909090909em;
+  width: 23.5909090909em;
+  animation-duration: 28.8733333333s;
 }
 
 #jupiter-img {
-  height: 5.4865rem;
-  width: 5.4865rem;
-  background-color: lightblue;
-  transform: translateX(4.865625rem);
+  height: 3.2919rem;
+  width: 3.2919rem;
+  background-color: rgb(227, 227, 202);
+  translate: 11.7954545455em 0;
 }
 
 #saturn-div {
-  height: 17.9rem;
-  width: 17.9rem;
-  animation-duration: 6s;
+  height: 29.8333333333em;
+  width: 29.8333333333em;
+  animation-duration: 35.8233333333s;
 }
 
 #saturn-img {
-  height: 4.5701rem;
-  width: 4.5701rem;
-  background-color: yellow;
-  transform: translateX(8.95rem);
+  height: 2.74206rem;
+  width: 2.74206rem;
+  background-color: rgb(236, 236, 101);
+  translate: 0 -14.9166666667em;
 }
 
 #uranus-div {
-  height: 35.8375rem;
-  width: 35.8375rem;
-  animation-duration: 6s;
+  height: 35.8375em;
+  width: 35.8375em;
+  animation-duration: 101.9633333333s;
 }
 
 #uranus-img {
   height: 1.99rem;
   width: 1.99rem;
-  background-color: burlywood;
-  transform: translateX(17.91875rem);
+  background-color: rgb(236, 244, 245);
+  translate: -17.91875em 0;
 }
 
 #neptune-div {
-  height: 56.4375rem;
-  width: 56.4375rem;
-  animation-duration: 6s;
+  height: 40.3125em;
+  width: 40.3125em;
+  animation-duration: 199.3333333333s;
 }
 
 #neptune-img {
   height: 1.932rem;
   width: 1.932rem;
-  background-color: blue;
-  transform: translateX(28.21875rem);
+  background-color: rgb(158, 179, 230);
+  translate: 0 20.15625em;
 }
 
 @keyframes rotation {
-  from {
-    rotate: 0deg;
-    rotate: 0deg;
+  0% {
+    transform: rotate(0deg);
   }
-  to {
-    rotate: 360deg;
-    rotate: 360deg;
+  100% {
+    transform: rotate(360deg);
   }
 }
 

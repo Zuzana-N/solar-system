@@ -10,25 +10,25 @@
     align-items: center;
 }
 //Distance from Sun (106 km) 	57.9 	108.2 	149.6 	0.384* 	228.0 	778.5 	1432.0 	2867.0 	4515.0 	5906.4
-$mercury-orbit: 5.79rem/8;
-$venus-orbit: 10.82rem/8;
-$earth-orbit: 14.9rem/8;
-$mars-orbit: 22.8rem/8;
-$jupiter-orbit: 77.85rem/8;
-$saturn-orbit: 143.2rem/8;
-$uranus-orbit: 286.7rem/8;
-$neptune-orbit: 451.5rem/8;
+$mercury-orbit: 5.79em/0.7;
+$venus-orbit: 10.82em/1;
+$earth-orbit: 14.9em/1;
+$mars-orbit: 22.8em/1.3;
+$jupiter-orbit: 77.85em/3.3;
+$saturn-orbit: 143.2em/4.8;
+$uranus-orbit: 286.7em/8;
+$neptune-orbit: 451.5em/11.2;
 
-$earth-size: 0.5rem;
+$earth-size: 1.5rem;
 $mercury-size: (0.3829 * $earth-size);
-$venus-size: 0.9499 * $earth-size;
-
-$mars-size: 0.53 * $earth-size;
-$jupiter-size: 10.973 * $earth-size;
-$saturn-size: 9.1402 * $earth-size;
-$uranus-size: 3.98 * $earth-size;
-$neptune-size: 3.864 * $earth-size;
-// mean radius (all*2):
+$venus-size: (0.94 * $earth-size);
+$mars-size: (0.53 * $earth-size);
+$jupiter-size: (10.973 * $earth-size / 5);
+$saturn-size: (9.1402 * $earth-size / 5);
+$uranus-size: (3.98 * $earth-size / 3);
+$neptune-size: (3.864 * $earth-size / 3);
+$sun-size: (109 * $earth-size / 35) ;
+// mean radius:
 // mercury: 0.3829 Earths
 // venus: 0.9499 Earths
 // earth: 6371.0 km 1 earth
@@ -38,6 +38,8 @@ $neptune-size: 3.864 * $earth-size;
 // uranus: 	25,362 km 3,98
 // neptune: 24,622 km 3,864
 
+//Orbital Period (days) 	88.0 	224.7 	365.2 	27.3* 	687.0 	4331 	10,747 	30,589 	59,800 	90,560
+
 body {
     background-color: black;
     @include flexCenter();
@@ -45,147 +47,161 @@ body {
 }
 
 main {
-    @include flexCenter();
+    height: 100%;
+    width: 100%;
 }
-// .container {
-//     position: relative;
-//     background-color: black;
-//     @include flexCenter();
-// }
+
+h1,p {
+    color: white;
+    text-align: center;
+}
+
+#planets {
+    @include flexCenter();
+    translate: 0 -100px;
+    height: 100%;
+    width: 100%;
+}
+
+#next {
+    translate: 0 -100px;
+}
+#sun {
+    position: absolute;
+    border-radius: 50%;
+    @include flexCenter();
+    background-color: rgb(255, 221, 0);;
+    width: $sun-size;
+    height: $sun-size;
+    box-shadow: 0 2px 20px yellow, 0 -2px 20px yellow, 2px 0 20px yellow, -2px 0 20px yellow;
+    border-color: transparent;
+}
+
 .planet-div {
     position: absolute;
     border-radius: 50%;
     @include flexCenter();
     border: 1px solid;
-    border-color:  white ;
-    background-color: transparent;
-    animation: rotation 6s linear infinite;
-    // rotate: 35deg;
+    border-color:  white;
 }
 
 .planet-img {
-    border-radius: 50%;
-    border: 2px solid;
-    // border-color: aqua transparent transparent transparent;
+    border-radius: 100%;
+    border: 1px solid transparent;
+}
 
+.rotation{
+    animation: rotation linear infinite;
 }
 
 #mercury-div {
     height: $mercury-orbit;
     width: $mercury-orbit;
-    animation-duration: 6s;
+    animation-duration: (8.8s/3);
 }
 
 #mercury-img {
     height: $mercury-size;
     width: $mercury-size;
-    background-color: grey;
-    transform: translate($mercury-orbit / 2);
-    // animation: rotation 2s linear infinite;
+    background-color: rgb(191, 187, 187);
+    translate: 0 ($mercury-orbit / 2);
+    animation-duration: (8.8s/3);
 }
 
 #venus-div {
     height: $venus-orbit;
     width: $venus-orbit;
-    animation-duration: 6s;
-    // border-color: aqua;
+    animation-duration: (22.4s/3);
 }
 
 #venus-img {
     height: $venus-size;
     width: $venus-size;
-    background-color: orange;
-    transform:  translateX($venus-orbit / 2);
-    // animation: rotation 2s linear infinite;
+    background-color: rgb(244, 237, 224);
+    translate: ($venus-orbit / 2) 0;
+    animation-duration: (22.4s/3);
 }
 
 #earth-div {
     height: $earth-orbit;
     width: $earth-orbit;
-    animation-duration: 6s;
+    animation-duration: (36.5s/3);
 }
 
 #earth-img {
     height: $earth-size;
     width: $earth-size;
-    background-color: greenyellow;
-    transform: translateX($earth-orbit / 2);
-    // animation: rotation 2s linear infinite;
+    background-color: rgb(115, 135, 194);
+    translate: 0 (-$earth-orbit / 2);
 }
 #mars-div {
     height: $mars-orbit;
     width: $mars-orbit;
-    animation-duration: 6s;
+    animation-duration: (68.7s/3);
 }
 
 #mars-img {
     height: $mars-size;
     width: $mars-size;
-    background-color: orangered;
-    transform: translateX($mars-orbit / 2);
-    // animation: rotation 2s linear infinite;
+    background-color: rgb(252, 153, 117);
+    translate: (-$mars-orbit / 2) 0;
 }
 #jupiter-div {
     height: $jupiter-orbit;
     width: $jupiter-orbit;
-    animation-duration: 6s;
+    animation-duration: (433.1s/15);
 }
 
 #jupiter-img {
     height: $jupiter-size;
     width: $jupiter-size;
-    background-color: lightblue;
-    transform: translateX($jupiter-orbit / 2);
-    // animation: rotation 2s linear infinite;
+    background-color: rgb(227, 227, 202);
+    translate: ($jupiter-orbit / 2) 0;
 }
+
 #saturn-div {
     height: $saturn-orbit;
     width: $saturn-orbit;
-    animation-duration: 6s;
+    animation-duration: (1074.7s/30);
 }
 
 #saturn-img {
     height: $saturn-size;
     width: $saturn-size;
-    background-color: yellow;
-    transform: translateX($saturn-orbit / 2);
-    // animation: rotation 2s linear infinite;
+    background-color: rgb(236, 236, 101);
+    translate: 0 (-$saturn-orbit / 2);
 }
 #uranus-div {
     height: $uranus-orbit;
     width: $uranus-orbit;
-    animation-duration: 6s;
+    animation-duration: (3058.9s/30);
 }
 
 #uranus-img {
     height: $uranus-size;
     width: $uranus-size;
-    background-color: burlywood;
-    transform: translateX($uranus-orbit / 2);
-    // animation: rotation 2s linear infinite;
+    background-color: rgb(236, 244, 245);
+    translate: (-$uranus-orbit / 2) 0;
 }
 #neptune-div {
     height: $neptune-orbit;
     width: $neptune-orbit;
-    animation-duration: 6s;
+    animation-duration: (5980s/30);
 }
 
 #neptune-img {
     height: $neptune-size;
     width: $neptune-size;
-    background-color: blue;
-    transform: translateX($neptune-orbit / 2);
-    // animation: rotation 2s linear infinite;
+    background-color: rgb(158, 179, 230);
+    translate: 0 ($neptune-orbit / 2);
 }
 
 @keyframes rotation {
-    from {
-        rotate: 0deg;
-        rotate: 0deg;
+    0% {
+        transform: rotate(0deg) 
     }
-    to {
-        rotate: 360deg;
-        rotate: 360deg;
+
+    100% {
+        transform: rotate(360deg) 
     }
 }
-
