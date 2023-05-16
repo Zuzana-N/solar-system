@@ -1,0 +1,196 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./images/starry_bckgrd.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+h1, p {
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  translate: 0 -400px;
+}
+
+.solar-system > h2 {
+  translate: 0 -350px;
+}
+
+#planets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#next {
+  translate: 0 -100px;
+}
+
+.quiz-container {
+  translate: 0 500px;
+}
+
+.planet-div {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-color: white;
+}
+
+.planet-img {
+  border-radius: 100%;
+}
+
+.rotation {
+  animation: rotation linear infinite;
+}
+
+#sun-div {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.6714285714rem;
+  height: 4.6714285714rem;
+  border-color: transparent;
+}
+
+#mercury-div {
+  height: 8.2714285714em;
+  width: 8.2714285714em;
+  animation-duration: 2.9333333333s;
+}
+
+#mercury-img {
+  height: 0.57435rem;
+  width: 0.57435rem;
+  background-color: rgb(191, 187, 187);
+  translate: 0 4.1357142857em;
+  animation-duration: 2.9333333333s;
+}
+
+#venus-div {
+  height: 10.82em;
+  width: 10.82em;
+  animation-duration: 7.4666666667s;
+}
+
+#venus-img {
+  height: 1.41rem;
+  width: 1.41rem;
+  background-color: rgb(244, 237, 224);
+  translate: 5.41em 0;
+  animation-duration: 7.4666666667s;
+}
+
+#earth-div {
+  height: 14.9em;
+  width: 14.9em;
+  animation-duration: 12.1666666667s;
+}
+
+#earth-img {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: rgb(115, 135, 194);
+  translate: 0 -7.45em;
+}
+
+#mars-div {
+  height: 17.5384615385em;
+  width: 17.5384615385em;
+  animation-duration: 22.9s;
+}
+
+#mars-img {
+  height: 0.795rem;
+  width: 0.795rem;
+  background-color: rgb(252, 153, 117);
+  translate: -8.7692307692em 0;
+}
+
+#jupiter-div {
+  height: 23.5909090909em;
+  width: 23.5909090909em;
+  animation-duration: 28.8733333333s;
+}
+
+#jupiter-img {
+  height: 3.2919rem;
+  width: 3.2919rem;
+  background-color: rgb(227, 227, 202);
+  translate: 11.7954545455em 0;
+}
+
+#saturn-div {
+  height: 29.8333333333em;
+  width: 29.8333333333em;
+  animation-duration: 35.8233333333s;
+}
+
+#saturn-img {
+  height: 2.74206rem;
+  width: 2.74206rem;
+  background-color: rgb(236, 236, 101);
+  translate: 0 -14.9166666667em;
+}
+
+#uranus-div {
+  height: 35.8375em;
+  width: 35.8375em;
+  animation-duration: 101.9633333333s;
+}
+
+#uranus-img {
+  height: 1.99rem;
+  width: 1.99rem;
+  background-color: rgb(236, 244, 245);
+  translate: -17.91875em 0;
+}
+
+#neptune-div {
+  height: 40.3125em;
+  width: 40.3125em;
+  animation-duration: 199.3333333333s;
+}
+
+#neptune-img {
+  height: 1.932rem;
+  width: 1.932rem;
+  background-color: rgb(158, 179, 230);
+  translate: 0 20.15625em;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

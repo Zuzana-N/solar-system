@@ -34,3 +34,22 @@ export const fetchQuizQuestions = async (amount: number, difficulty: Difficulty)
 //     const json = await response.json();
 //     console.log(json);
 // }
+export let planets:any = [];
+
+export const fetchQuestions = async () => {
+    const response = await fetch('https://api.le-systeme-solaire.net/rest/bodies?filter[]=isPlanet,eq,true');
+    const json = await response.json();
+    for (let i = 0; i<json.bodies.length; i++) {
+        planets.push(json.bodies[i].englishName);
+    }
+    console.log("success");
+}
+
+fetchQuestions()
+
+// const getBodies = async () => {
+//     const data:any = await fetchQuestions()
+//     console.log(data.bodies[0].name) 
+//   }
+
+//   getBodies()
