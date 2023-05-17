@@ -62,6 +62,11 @@ h1 {
     translate: 0 -400px;
 }
 
+.solar-system {
+    display: flex;
+    flex-direction: column;
+}
+
 .solar-system > h2 {
     translate: 0 -350px;
 }
@@ -72,10 +77,6 @@ h1 {
     height: 100%;
     width: 100%;
     position: relative;
-}
-
-#next {
-    translate: 0 -100px;
 }
 
 .quiz-container {
@@ -103,10 +104,8 @@ h1 {
     position: absolute;
     border-radius: 50%;
     @include flexCenter();
-    // background-color: rgb(255, 221, 0);
     width: $sun-size;
     height: $sun-size;
-    // box-shadow: 0 2px 20px yellow, 0 -2px 20px yellow, 2px 0 20px yellow, -2px 0 20px yellow;
     border-color: transparent;
 }
 
@@ -185,9 +184,11 @@ h1 {
 
 #saturn-img {
     height: $saturn-size;
-    width: $saturn-size;
+    width: $saturn-size * 1.2;
     background-color: rgb(236, 236, 101);
     translate: 0 (-$saturn-orbit / 2);
+    border-radius: 20% 100% 20% 100%;
+    rotate: -50deg;
 }
 
 #uranus-div {
@@ -223,5 +224,22 @@ h1 {
 
     100% {
         transform: rotate(360deg) 
+    }
+}
+
+#rotate-btn {
+    translate: 0 -400px;
+    padding: 5px 10px;
+    font-family: inherit;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.51);
+    color: inherit;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 60px;
+    font-weight: bold;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.818);
+        color: black;
     }
 }

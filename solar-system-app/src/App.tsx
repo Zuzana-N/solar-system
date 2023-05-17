@@ -76,7 +76,7 @@ const App = () => {
 
   return (
     <main className="App">
-      <h1>Learn about our solar system!</h1>
+      {/* <h1>Learn about our solar system!</h1> */}
       <SolarSystem />
       <div className='quiz-container'>
         <h2>Quiz</h2>
