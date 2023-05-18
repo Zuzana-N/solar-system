@@ -11,11 +11,12 @@ const SolarSystem = () => {
     }
     return (
         <section className='solar-system'>
-            {/* <h2>Solar System</h2> */}
+            <h2>First, check out the planets and learn about our solar system!</h2>
             <div id='planets'>
                 {dataElements}
+                <div className="background"></div>
             </div>
-            <button id='rotate-btn' onClick={changeRotation}>{rotation ? "Stop" : "Start"}</button>
+            <button id='rotate-btn' onClick={changeRotation}>{rotation ? "STOP (return to default position)" : "Start the rotation"}</button>
         </section>
     )
 }

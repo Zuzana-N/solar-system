@@ -42,15 +42,17 @@ $sun-size: (109 * $earth-size / 35) ;
 
 body {
     background-image: url(./images/starry_bckgrd.jpg);
-    @include flexCenter();
-    height: 100vh;
     color: white;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    // border: 1px solid red;
 }
 
 main {
-    height: 100%;
-    width: 100%;
+    display: grid;
+    gap: 1rem;
+    // border: 1px solid pink;
+    padding: clamp(0rem, 0.5rem, 1rem);
+    // min-block-size: 100dvh;
 }
 
 h1, p {
@@ -58,30 +60,60 @@ h1, p {
     text-align: center;
 }
 
-h1 {
-    translate: 0 -400px;
+a {
+    color:rgb(244, 237, 224);
+    &:hover {
+        text-decoration: none;
+    }    
 }
 
 .solar-system {
-    display: flex;
-    flex-direction: column;
+    @include flexCenter();
+    // border: 1px solid paleturquoise;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: clamp(0rem, 0.5rem, 1rem);
+
 }
 
 .solar-system > h2 {
-    translate: 0 -350px;
+    position: absolute;
+    top: 0;
+}
+
+#rotate-btn {
+    padding: 5px 10px;
+    font-family: inherit;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.51);
+    color: inherit;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100px;
+    font-weight: bold;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.818);
+        color: black;
+    }
 }
 
 #planets {
     @include flexCenter();
-    // translate: 0 -100px;
-    height: 100%;
-    width: 100%;
     position: relative;
+    // border: 1px solid yellow;
+}
+
+.background {
+    opacity: 0;
+    height: 720px;
+    width: 720px;
 }
 
 .quiz-container {
-    translate: 0 500px;
-
+    // border: 1px solid greenyellow;
+    @include flexCenter();
+    flex-direction: column;
 }
 
 .planet-div {
@@ -100,13 +132,19 @@ h1 {
     animation: rotation linear infinite;
 }
 
+// Planets and sun styles
+
 #sun-div {
     position: absolute;
     border-radius: 50%;
     @include flexCenter();
     width: $sun-size;
     height: $sun-size;
-    border-color: transparent;
+    border-color: transparent;;
+}
+
+#sun-img {
+    border-radius: 100%;
 }
 
 #mercury-div {
@@ -227,19 +265,3 @@ h1 {
     }
 }
 
-#rotate-btn {
-    translate: 0 -400px;
-    padding: 5px 10px;
-    font-family: inherit;
-    border: 1px solid white;
-    background-color: rgba(0, 0, 0, 0.51);
-    color: inherit;
-    border-radius: 15px;
-    cursor: pointer;
-    width: 60px;
-    font-weight: bold;
-    &:hover {
-        background-color: rgba(255, 255, 255, 0.818);
-        color: black;
-    }
-}

@@ -3,7 +3,7 @@ import QuestionCard from './components/QuestionCard';
 import { fetchQuizQuestions, QuestionState, Difficulty, planets } from './API';
 import SolarSystem from './components/SolarSystem';
 import {Question} from './questions';
-
+import Footer from './components/Footer';
 
 
 export type AnswerObject = {
@@ -76,10 +76,10 @@ const App = () => {
 
   return (
     <main className="App">
-      {/* <h1>Learn about our solar system!</h1> */}
+      <h1>Solar System</h1>
       <SolarSystem />
       <div className='quiz-container'>
-        <h2>Quiz</h2>
+        <h2>Then, take the quiz to test your knowledge! (in progress)</h2>
         {/* <div>{Question1}</div> */}
         {gameOver || userAnswers.length === TOTAL_QUESTIONS ?(<button className='start' onClick={startTrivia}>Start</button>) : null}
         {!gameOver && <p className='score'>Score: {score}</p>}
@@ -95,9 +95,9 @@ const App = () => {
         // stylesClass={isCorrect}
         />)}
         {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ?
-        (<button className='next' onClick={nextQuestion}>Next question</button>) : null}
+        (<button className='next' onClick={nextQuestion}>Next question</button>) : null}  
       </div>
-      
+      <Footer />
     </main>
   );
 }
