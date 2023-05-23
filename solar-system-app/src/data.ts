@@ -1,13 +1,5 @@
 export default [
     {
-        id_div: "sun-div",
-        id_img: "sun-img",
-        name: "Sun",
-        img: "./images/sun_img.jpg",
-        width: "100rem",
-        height: "100rem"
-    },
-    {
         id_div: "mercury-div",
         id_img: "mercury-img",
         name: "Mercury",
@@ -41,7 +33,7 @@ export default [
         id_div: "saturn-div",
         id_img: "saturn-img",
         name: "Saturn",
-        img: "./images/saturn_img.jpg"
+        img: "./images/saturn.png"
     },
     {
         id_div: "uranus-div",

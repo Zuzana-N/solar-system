@@ -1,6 +1,6 @@
 # Solar System App
 
-This app will allow users to see our solar system, learn about the planets and take a quiz.
+This app allows users to see our solar system and take a quiz. It will also allow them click on the planets and learn about them.
 
 ## Stack
 

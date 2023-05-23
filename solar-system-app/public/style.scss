@@ -1,3 +1,5 @@
+@use "sass:math";
+
 *, *::after, *::before {
     margin: 0;
     padding: 0;
@@ -9,11 +11,12 @@
     justify-content: center;
     align-items: center;
 }
+
 //Distance from Sun (106 km) 	57.9 	108.2 	149.6 	0.384* 	228.0 	778.5 	1432.0 	2867.0 	4515.0 	5906.4
 $mercury-orbit: 5.79em/0.7;
 $venus-orbit: 10.82em/1;
 $earth-orbit: 14.9em/1;
-$mars-orbit: 22.8em/1.3;
+$mars-orbit: math.div(22.8em, 1.3);
 $jupiter-orbit: 77.85em/3.3;
 $saturn-orbit: 143.2em/4.8;
 $uranus-orbit: 286.7em/8;
@@ -40,19 +43,31 @@ $sun-size: (109 * $earth-size / 35) ;
 
 //Orbital Period (days) 	88.0 	224.7 	365.2 	27.3* 	687.0 	4331 	10,747 	30,589 	59,800 	90,560
 
+$thick-paragr: 'Audiowide', cursive;
+$primary-heading: 'Bruno Ace', cursive;
+$thick-paragraph2: 'Righteous', cursive;
+$paragraph: 'Unbounded', cursive;
+
+// General styling
 body {
     background-image: url(./images/starry_bckgrd.jpg);
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    // border: 1px solid red;
 }
 
 main {
     display: grid;
     gap: 1rem;
-    // border: 1px solid pink;
     padding: clamp(0rem, 0.5rem, 1rem);
     // min-block-size: 100dvh;
+}
+
+h1 {
+    font-family: $primary-heading;
+    font-size: 4.5rem;
+}
+
+h2, h3, ol, il, span {
+    background-color: rgba(0, 0, 0, 0.51);
 }
 
 h1, p {
@@ -67,31 +82,33 @@ a {
     }    
 }
 
-.solar-system {
-    @include flexCenter();
-    // border: 1px solid paleturquoise;
-    position: relative;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: clamp(0rem, 0.5rem, 1rem);
-
+h2 {
+    font-family: $thick-paragr;
+    margin-bottom: 1rem;
 }
 
-.solar-system > h2 {
-    position: absolute;
-    top: 0;
+p, ol, il, button {
+    font-family: $paragraph;
+    font-weight: 200;
+}
+
+.solar-system {
+    @include flexCenter();
+    position: relative;
+    flex-wrap: wrap;
+    padding: clamp(0rem, 0.5rem, 1rem);
+    
 }
 
 #rotate-btn {
     padding: 5px 10px;
-    font-family: inherit;
     border: 1px solid white;
     background-color: rgba(0, 0, 0, 0.51);
     color: inherit;
-    border-radius: 15px;
+    border-radius: 20px;
     cursor: pointer;
-    width: 100px;
-    font-weight: bold;
+    width: 150px;
+    font-weight: 300;
     &:hover {
         background-color: rgba(255, 255, 255, 0.818);
         color: black;
@@ -101,7 +118,6 @@ a {
 #planets {
     @include flexCenter();
     position: relative;
-    // border: 1px solid yellow;
 }
 
 .background {
@@ -111,7 +127,6 @@ a {
 }
 
 .quiz-container {
-    // border: 1px solid greenyellow;
     @include flexCenter();
     flex-direction: column;
 }
@@ -133,14 +148,15 @@ a {
 }
 
 // Planets and sun styles
-
 #sun-div {
     position: absolute;
     border-radius: 50%;
     @include flexCenter();
     width: $sun-size;
     height: $sun-size;
-    border-color: transparent;;
+    border-color: transparent;
+    z-index: 100;
+    cursor: pointer;
 }
 
 #sun-img {
@@ -185,6 +201,7 @@ a {
     height: $earth-size;
     width: $earth-size;
     background-color: rgb(115, 135, 194);
+    animation-duration: (8.8s/3);
     translate: 0 (-$earth-orbit / 2);
 }
 
@@ -198,6 +215,7 @@ a {
     height: $mars-size;
     width: $mars-size;
     background-color: rgb(252, 153, 117);
+    animation-duration: (8.8s/3);
     translate: (-$mars-orbit / 2) 0;
 }
 
@@ -211,6 +229,7 @@ a {
     height: $jupiter-size;
     width: $jupiter-size;
     background-color: rgb(227, 227, 202);
+    animation-duration: (8.8s/3);
     translate: ($jupiter-orbit / 2) 0;
 }
 
@@ -218,15 +237,17 @@ a {
     height: $saturn-orbit;
     width: $saturn-orbit;
     animation-duration: (1074.7s/30);
+    // border-radius: 0%;
 }
 
 #saturn-img {
-    height: $saturn-size;
-    width: $saturn-size * 1.2;
-    background-color: rgb(236, 236, 101);
+    height: $saturn-size * 1.3;
+    // width: $saturn-size * 1.2;
+    // background-color: black;
+    // animation-duration: (18.8s);
     translate: 0 (-$saturn-orbit / 2);
-    border-radius: 20% 100% 20% 100%;
-    rotate: -50deg;
+    border-radius: 0%;
+    // rotate: -50deg;
 }
 
 #uranus-div {
@@ -239,6 +260,7 @@ a {
     height: $uranus-size;
     width: $uranus-size;
     background-color: rgb(236, 244, 245);
+    animation-duration: (18.8s);
     translate: (-$uranus-orbit / 2) 0;
 }
 
@@ -252,6 +274,7 @@ a {
     height: $neptune-size;
     width: $neptune-size;
     background-color: rgb(158, 179, 230);
+    animation-duration: (8.8s/3);
     translate: 0 ($neptune-orbit / 2);
 }
 
