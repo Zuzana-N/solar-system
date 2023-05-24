@@ -1,4 +1,4 @@
-import { shuffleArray } from "./utils";
+
 
 export let planets:any = [];
 

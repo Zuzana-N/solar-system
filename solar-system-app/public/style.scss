@@ -42,11 +42,15 @@ $sun-size: (109 * $earth-size / 35) ;
 // neptune: 24,622 km 3,864
 
 //Orbital Period (days) 	88.0 	224.7 	365.2 	27.3* 	687.0 	4331 	10,747 	30,589 	59,800 	90,560
-
+// Fonts - variables
 $thick-paragr: 'Audiowide', cursive;
 $primary-heading: 'Bruno Ace', cursive;
 $thick-paragraph2: 'Righteous', cursive;
 $paragraph: 'Unbounded', cursive;
+
+// Color variables
+$black-overlay: rgba(0, 0, 0, 0.51);
+$white-overlay: rgba(255, 255, 255, 0.818);
 
 // General styling
 body {
@@ -67,7 +71,7 @@ h1 {
 }
 
 h2, h3, ol, il, span {
-    background-color: rgba(0, 0, 0, 0.51);
+    background-color: $black-overlay;
 }
 
 h1, p {
@@ -92,6 +96,101 @@ p, ol, il, button {
     font-weight: 200;
 }
 
+// Quiz styling
+.quiz-container {
+    margin: 1rem;
+}
+
+.question-card {
+    background-color: $black-overlay;
+    padding: 1rem 2.5rem;
+    border-radius: 10px;
+    border: 1px solid white;
+    max-width: 750px;
+    margin: 0.5rem auto
+}
+
+.score {
+    font-size: 20px;
+    font-weight: 600;  
+}
+
+.question {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0.7rem auto;
+
+}
+
+@media (max-width: 700px) {
+    .question-card {
+        max-width: 350px;
+    }
+}
+
+.answers {
+    display: grid;
+    place-content: center;
+    gap: 0.5rem;
+    grid-template-columns: 1fr;
+}
+
+.answer-btn {
+    width: 100%;
+    color: white;
+    padding: 0.5rem;
+    cursor: not-allowed;
+    background-color: rgb(81, 81, 81);
+    &:enabled {
+        background-color: $black-overlay;
+        cursor: pointer;
+    }
+    &:enabled:hover {
+        box-shadow: 0px 0px 5px white;
+    }
+}
+
+.green {
+    background-color: rgb(71, 160, 71);
+}
+
+.red {
+    background-color: red;
+}
+
+
+
+// Buttons
+.button {
+    border-radius: 10px;
+    background-color: $black-overlay; 
+    cursor: pointer;
+    color: white;
+    border: 1px solid white;
+    &:hover {
+        background-color: $white-overlay;
+        color: black;
+    }
+}
+
+.start-btn {
+    padding: 1rem 2rem;
+    font-family: $primary-heading;
+    font-size: 24px;
+    box-shadow: 0 1px 5px white;
+    margin: 1rem auto;
+    &:hover {
+        animation: start ease-in-out 1s infinite
+    }
+}
+
+.next-btn {
+    font-size: 15px;
+    font-weight: 300;
+    padding: 0.5rem 1rem;
+}
+
+// Solar system styling
 .solar-system {
     @include flexCenter();
     position: relative;
@@ -103,14 +202,14 @@ p, ol, il, button {
 #rotate-btn {
     padding: 5px 10px;
     border: 1px solid white;
-    background-color: rgba(0, 0, 0, 0.51);
+    background-color: $black-overlay;
     color: inherit;
     border-radius: 20px;
     cursor: pointer;
     width: 150px;
     font-weight: 300;
     &:hover {
-        background-color: rgba(255, 255, 255, 0.818);
+        background-color: $white-overlay;
         color: black;
     }
 }
@@ -243,11 +342,9 @@ p, ol, il, button {
 #saturn-img {
     height: $saturn-size * 1.3;
     // width: $saturn-size * 1.2;
-    // background-color: black;
     // animation-duration: (18.8s);
     translate: 0 (-$saturn-orbit / 2);
     border-radius: 0%;
-    // rotate: -50deg;
 }
 
 #uranus-div {
@@ -288,3 +385,11 @@ p, ol, il, button {
     }
 }
 
+@keyframes start {
+    50% {
+    scale: 115%
+    }
+    100% {
+        scale: 100%
+    }
+}

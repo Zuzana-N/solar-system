@@ -46,6 +46,94 @@ p, ol, il, button {
   font-weight: 200;
 }
 
+.quiz-container {
+  margin: 1rem;
+}
+
+.question-card {
+  background-color: rgba(0, 0, 0, 0.51);
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  max-width: 750px;
+  margin: 0.5rem auto;
+}
+
+.score {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.question {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0.7rem auto;
+}
+
+@media (max-width: 700px) {
+  .question-card {
+    max-width: 350px;
+  }
+}
+.answers {
+  display: grid;
+  place-content: center;
+  gap: 0.5rem;
+  grid-template-columns: 1fr;
+}
+
+.answer-btn {
+  width: 100%;
+  color: white;
+  padding: 0.5rem;
+  cursor: not-allowed;
+  background-color: rgb(81, 81, 81);
+}
+.answer-btn:enabled {
+  background-color: rgba(0, 0, 0, 0.51);
+  cursor: pointer;
+}
+.answer-btn:enabled:hover {
+  box-shadow: 0px 0px 5px white;
+}
+
+.green {
+  background-color: rgb(71, 160, 71);
+}
+
+.red {
+  background-color: red;
+}
+
+.button {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.51);
+  cursor: pointer;
+  color: white;
+  border: 1px solid white;
+}
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.818);
+  color: black;
+}
+
+.start-btn {
+  padding: 1rem 2rem;
+  font-family: "Bruno Ace", cursive;
+  font-size: 24px;
+  box-shadow: 0 1px 5px white;
+  margin: 1rem auto;
+}
+.start-btn:hover {
+  animation: start ease-in-out 1s infinite;
+}
+
+.next-btn {
+  font-size: 15px;
+  font-weight: 300;
+  padding: 0.5rem 1rem;
+}
+
 .solar-system {
   display: flex;
   justify-content: center;
@@ -241,6 +329,14 @@ p, ol, il, button {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@keyframes start {
+  50% {
+    scale: 115%;
+  }
+  100% {
+    scale: 100%;
   }
 }
 

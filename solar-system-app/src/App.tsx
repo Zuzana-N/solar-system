@@ -70,8 +70,9 @@ const App = () => {
       <div className='quiz-container'>
         <h2>Then, take the quiz to test your knowledge! (quiz in progress)</h2>
         {/* <div>{Question1}</div> */}
-        {gameOver || userAnswers.length === TOTAL_QUESTIONS ?(<button className='start' onClick={startTrivia}>Start</button>) : null}
-        {!gameOver && <p className='score'>Score: {score}</p>}
+        {gameOver || userAnswers.length === TOTAL_QUESTIONS ?(<button className='start-btn button' onClick={startTrivia}>START</button>) : null}
+        
+        {!gameOver && <p className='score'><span>Score: {score}</span></p>}
         {loading && <p className=''>Loading Questions...</p>}
   
         {!loading && !gameOver && (<QuestionCard 
@@ -83,7 +84,7 @@ const App = () => {
         callback={checkAnswer}
         />)}
         {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ?
-        (<button className='next' onClick={nextQuestion}>Next question</button>) : null}  
+        (<button className='next-btn button' onClick={nextQuestion}>Next question</button>) : null}  
       </div>
       <Footer />
     </main>

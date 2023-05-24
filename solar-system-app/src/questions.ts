@@ -10,7 +10,7 @@ export type Question = {
 const questionsData = [
 {
     id: 1,
-    question: "What is the 4th planet in the Solar System?",
+    question: "What is the 4th planet of the Solar System?",
     correct_answer: "Mars",
     incorrect_answers: ["Venus", "Jupiter", "Earth"]
 },

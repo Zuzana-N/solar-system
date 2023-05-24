@@ -11,19 +11,28 @@ type Props = {
     totalQuestions: number;
 }
 
-const QuestionCard: React.FC<Props> = ({ question, answers, callback, userAnswer, questionNr, totalQuestions}) => 
-(
-    <div>
-        <p className="number">Question: {questionNr} / {totalQuestions}</p>
-        <p dangerouslySetInnerHTML={{ __html: question}} />
-        <div>{answers.map(answer => (
-            <div key={answer} >
-                <button disabled={userAnswer ? true : false} value={answer} onClick={callback} >
-                    <span dangerouslySetInnerHTML={{ __html: answer}} />
+
+const QuestionCard: React.FC<Props> = ({ question, answers, callback, userAnswer, questionNr, totalQuestions}) => {
+    // const determineClass = () => {
+    //     if (userAnswer) {
+    //         return userAnswer?.answer === answer && userAnswer?.correctAnswer === answer ? "answer-btn green" : "answer-btn red"
+    //     }
+    // }
+
+    return (
+        <div className="question-card">
+            <p className="number">Question: {questionNr} / {totalQuestions}</p>
+            <p className="question">{question}</p>
+            <div className="answers">{answers.map(answer => (
+    
+                <button key={answer} disabled={userAnswer ? true : false} value={answer} onClick={callback} className={userAnswer?.correctAnswer === answer ? "answer-btn green" : "answer-btn"}>
+                    {answer}
                 </button>
-            </div>
-        ))}</div>
-    </div>
-);
+    
+            ))}</div>
+        </div>
+    );
+}
+
 
 export default QuestionCard;
