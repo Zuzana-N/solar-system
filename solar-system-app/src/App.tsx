@@ -22,10 +22,11 @@ const App = () => {
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
-  const [isCorrect, setIsCorrect] = useState("");
+  const [isDisplayed, setIsDisplayed] = useState(true);
 
 
   const startTrivia = async () => {
+    setIsDisplayed(false)
     setLoading(true);
     setGameOver(false);
     const newQuestions = getNewQuestions
@@ -35,6 +36,10 @@ const App = () => {
     setNumber(0);
     setLoading(false)
   }
+  const displaySystem = () => {
+    setIsDisplayed(prevState => !prevState)
+    setGameOver(true)
+  }
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!gameOver) {
@@ -42,7 +47,7 @@ const App = () => {
       const correct = questions[number].correct_answer === answer;
       if (correct) {
         setScore(prevScore => prevScore + 1)
-        setIsCorrect("correct")}
+      }
       const answerObject = {
         question : questions[number].question,
         answer,
@@ -60,18 +65,16 @@ const App = () => {
     } else {
       setNumber(nextQuestion)
     }
-    setIsCorrect("")
   }
 
   return (
     <main className="App">
       <h1><span>SOLAR SYSTEM</span></h1>
-      <SolarSystem />
-      <div className='quiz-container'>
-        <h2>Then, take the quiz to test your knowledge! (quiz in progress)</h2>
-        {/* <div>{Question1}</div> */}
-        {gameOver || userAnswers.length === TOTAL_QUESTIONS ?(<button className='start-btn button' onClick={startTrivia}>START</button>) : null}
-        
+      {isDisplayed && (<SolarSystem />)}
+      {isDisplayed && <h2>Take the quiz to test your knowledge!</h2>}
+      {gameOver || userAnswers.length === TOTAL_QUESTIONS ?(<button className='start-btn button' onClick={startTrivia}>START</button>) : null}
+      {!isDisplayed && <div className='quiz-container'>
+
         {!gameOver && <p className='score'><span>Score: {score}</span></p>}
         {loading && <p className=''>Loading Questions...</p>}
   
@@ -85,7 +88,8 @@ const App = () => {
         />)}
         {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ?
         (<button className='next-btn button' onClick={nextQuestion}>Next question</button>) : null}  
-      </div>
+      </div>}
+      {!isDisplayed && <button className='goback-btn button' onClick={displaySystem}>END GAME AND GO BACK</button>}
       <Footer />
     </main>
   );

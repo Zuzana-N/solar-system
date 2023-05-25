@@ -60,7 +60,7 @@ body {
 
 main {
     display: grid;
-    gap: 1rem;
+    // gap: 1rem;
     padding: clamp(0rem, 0.5rem, 1rem);
     // min-block-size: 100dvh;
 }
@@ -70,7 +70,7 @@ h1 {
     font-size: 4.5rem;
 }
 
-h2, h3, ol, il, span {
+h3, ol, il, span {
     background-color: $black-overlay;
 }
 
@@ -88,7 +88,7 @@ a {
 
 h2 {
     font-family: $thick-paragr;
-    margin-bottom: 1rem;
+    text-align: center;
 }
 
 p, ol, il, button {
@@ -99,6 +99,8 @@ p, ol, il, button {
 // Quiz styling
 .quiz-container {
     margin: 1rem;
+    @include flexCenter();
+    flex-direction: column;
 }
 
 .question-card {
@@ -151,14 +153,13 @@ p, ol, il, button {
 }
 
 .green {
-    background-color: rgb(71, 160, 71);
+    background-color: rgb(19, 90, 30);
+    border: 2px rgb(19, 90, 30) solid;
 }
 
 .red {
     background-color: red;
 }
-
-
 
 // Buttons
 .button {
@@ -190,13 +191,26 @@ p, ol, il, button {
     padding: 0.5rem 1rem;
 }
 
+.goback-btn {
+    padding: 1rem 1.5rem;
+    font-family: $primary-heading;
+    font-size: 20px;
+    box-shadow: 0 1px 5px white;
+    margin: 1rem auto;
+}
+
 // Solar system styling
 .solar-system {
-    @include flexCenter();
+    // @include flexCenter();
+    margin: 0 auto;
     position: relative;
     flex-wrap: wrap;
-    padding: clamp(0rem, 0.5rem, 1rem);
     
+}
+
+.solar-system > h2 {
+    margin-bottom: 1rem;
+
 }
 
 #rotate-btn {
@@ -225,11 +239,6 @@ p, ol, il, button {
     width: 720px;
 }
 
-.quiz-container {
-    @include flexCenter();
-    flex-direction: column;
-}
-
 .planet-div {
     position: absolute;
     border-radius: 50%;
@@ -254,7 +263,7 @@ p, ol, il, button {
     width: $sun-size;
     height: $sun-size;
     border-color: transparent;
-    z-index: 100;
+    z-index: 10;
     cursor: pointer;
 }
 
@@ -392,4 +401,11 @@ p, ol, il, button {
     100% {
         scale: 100%
     }
+}
+
+footer {
+    position: fixed;
+    bottom: 5px;
+    right: 15px;
+
 }

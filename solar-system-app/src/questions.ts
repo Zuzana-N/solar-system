@@ -24,7 +24,7 @@ const questionsData = [
     id: 3,
     question: "How many moons of Jupiter do we know about? (as of 2023)" ,
     correct_answer: "95",
-    incorrect_answers: ["51", "124", "89"]
+    incorrect_answers: ["51", "124", "70"]
 },
  {
     id: 4,

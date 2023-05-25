@@ -11,7 +11,6 @@ body {
 
 main {
   display: grid;
-  gap: 1rem;
   padding: 0.5rem;
 }
 
@@ -20,7 +19,7 @@ h1 {
   font-size: 4.5rem;
 }
 
-h2, h3, ol, il, span {
+h3, ol, il, span {
   background-color: rgba(0, 0, 0, 0.51);
 }
 
@@ -38,7 +37,7 @@ a:hover {
 
 h2 {
   font-family: "Audiowide", cursive;
-  margin-bottom: 1rem;
+  text-align: center;
 }
 
 p, ol, il, button {
@@ -48,6 +47,10 @@ p, ol, il, button {
 
 .quiz-container {
   margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .question-card {
@@ -98,7 +101,8 @@ p, ol, il, button {
 }
 
 .green {
-  background-color: rgb(71, 160, 71);
+  background-color: rgb(19, 90, 30);
+  border: 2px rgb(19, 90, 30) solid;
 }
 
 .red {
@@ -134,13 +138,22 @@ p, ol, il, button {
   padding: 0.5rem 1rem;
 }
 
+.goback-btn {
+  padding: 1rem 1.5rem;
+  font-family: "Bruno Ace", cursive;
+  font-size: 20px;
+  box-shadow: 0 1px 5px white;
+  margin: 1rem auto;
+}
+
 .solar-system {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
   position: relative;
   flex-wrap: wrap;
-  padding: 0.5rem;
+}
+
+.solar-system > h2 {
+  margin-bottom: 1rem;
 }
 
 #rotate-btn {
@@ -171,13 +184,6 @@ p, ol, il, button {
   width: 720px;
 }
 
-.quiz-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 .planet-div {
   position: absolute;
   border-radius: 50%;
@@ -205,7 +211,7 @@ p, ol, il, button {
   width: 4.6714285714rem;
   height: 4.6714285714rem;
   border-color: transparent;
-  z-index: 100;
+  z-index: 10;
   cursor: pointer;
 }
 
@@ -338,6 +344,11 @@ p, ol, il, button {
   100% {
     scale: 100%;
   }
+}
+footer {
+  position: fixed;
+  bottom: 5px;
+  right: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
