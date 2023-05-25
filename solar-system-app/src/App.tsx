@@ -71,8 +71,9 @@ const App = () => {
     <main className="App">
       <h1><span>SOLAR SYSTEM</span></h1>
       {isDisplayed && (<SolarSystem />)}
-      {isDisplayed && <h2>Take the quiz to test your knowledge!</h2>}
+      {isDisplayed && <h2 className='quiz-heading'>Take the quiz to test your knowledge!</h2>}
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ?(<button className='start-btn button' onClick={startTrivia}>START</button>) : null}
+      {userAnswers.length === TOTAL_QUESTIONS ?(<button className='new-btn button' onClick={startTrivia}>RESTART</button>) : null}
       {!isDisplayed && <div className='quiz-container'>
 
         {!gameOver && <p className='score'><span>Score: {score}</span></p>}
@@ -87,9 +88,9 @@ const App = () => {
         callback={checkAnswer}
         />)}
         {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ?
-        (<button className='next-btn button' onClick={nextQuestion}>Next question</button>) : null}  
+        (<button className='next-btn button' onClick={nextQuestion}>Next question</button>) : null} 
+        <button className='goback-btn button' onClick={displaySystem}>END GAME AND GO BACK</button>
       </div>}
-      {!isDisplayed && <button className='goback-btn button' onClick={displaySystem}>END GAME AND GO BACK</button>}
       <Footer />
     </main>
   );

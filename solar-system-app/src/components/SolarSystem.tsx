@@ -12,7 +12,7 @@ const SolarSystem = () => {
     return (
         <section className='solar-system'>
             <h2>First, check out the planets and learn about our solar system!</h2>
-            <p><span>Click the sun to stop the rotation and return the planets into default position. Click again to restart the rotation.</span></p>
+            <p className='rotation-info'><span>Click the sun to stop the rotation and return the planets into default position. Click again to restart the rotation.</span></p>
             <div id='planets'>
                 <div id="sun-div" >
                     <img src="./images/sun_img.jpg" alt="Sun" id="sun-img" width="100rem" height="100rem" onClick={changeRotation}/>

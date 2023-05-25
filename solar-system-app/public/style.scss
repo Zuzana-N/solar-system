@@ -141,7 +141,6 @@ p, ol, il, button {
     width: 100%;
     color: white;
     padding: 0.5rem;
-    cursor: not-allowed;
     background-color: rgb(81, 81, 81);
     &:enabled {
         background-color: $black-overlay;
@@ -152,12 +151,12 @@ p, ol, il, button {
     }
 }
 
-.green {
+.correct-answer {
     background-color: rgb(19, 90, 30);
     border: 2px rgb(19, 90, 30) solid;
 }
 
-.red {
+.wrong-answer {
     background-color: red;
 }
 
@@ -196,7 +195,7 @@ p, ol, il, button {
     font-family: $primary-heading;
     font-size: 20px;
     box-shadow: 0 1px 5px white;
-    margin: 1rem auto;
+    margin: 2rem auto;
 }
 
 // Solar system styling
@@ -251,7 +250,7 @@ p, ol, il, button {
     border-radius: 100%;
 }
 
-.rotation{
+.rotation {
     animation: rotation linear infinite;
 }
 
@@ -384,6 +383,55 @@ p, ol, il, button {
     translate: 0 ($neptune-orbit / 2);
 }
 
+footer {
+    position: fixed;
+    bottom: 5px;
+    right: 15px;
+    margin-top: 2rem;
+}
+
+@media (max-width: 750px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .solar-system {
+        @include flexCenter()
+    }
+
+    #planets {
+        translate: 0 -30%;
+        overflow: hidden;
+        max-width: 360px;
+        
+    }
+    .rotation {
+        animation: 0s;
+    }
+    .rotation-info {
+        display: none;
+    }
+    .planet-div {border-color: transparent;}
+    #sun-div {cursor: default;}
+    #venus-img {translate: 0 ($venus-orbit / 2);}
+    #earth-img {translate: 0 ($earth-orbit / 2)}
+    #mars-img {translate: 0 ($mars-orbit / 2)}
+    #jupiter-img {translate: 0 ($jupiter-orbit / 2)}
+    #saturn-img {translate: 0 ($saturn-orbit / 2)}
+    #uranus-img {translate: 0 ($uranus-orbit / 2)}
+    
+    .goback-btn {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-height: 800px) {
+    footer {
+        position: relative;
+    }
+}
+
 @keyframes rotation {
     0% {
         transform: rotate(0deg) 
@@ -403,9 +451,3 @@ p, ol, il, button {
     }
 }
 
-footer {
-    position: fixed;
-    bottom: 5px;
-    right: 15px;
-
-}

@@ -89,7 +89,6 @@ p, ol, il, button {
   width: 100%;
   color: white;
   padding: 0.5rem;
-  cursor: not-allowed;
   background-color: rgb(81, 81, 81);
 }
 .answer-btn:enabled {
@@ -100,12 +99,12 @@ p, ol, il, button {
   box-shadow: 0px 0px 5px white;
 }
 
-.green {
+.correct-answer {
   background-color: rgb(19, 90, 30);
   border: 2px rgb(19, 90, 30) solid;
 }
 
-.red {
+.wrong-answer {
   background-color: red;
 }
 
@@ -143,7 +142,7 @@ p, ol, il, button {
   font-family: "Bruno Ace", cursive;
   font-size: 20px;
   box-shadow: 0 1px 5px white;
-  margin: 1rem auto;
+  margin: 2rem auto;
 }
 
 .solar-system {
@@ -329,6 +328,67 @@ p, ol, il, button {
   translate: 0 20.15625em;
 }
 
+footer {
+  position: fixed;
+  bottom: 5px;
+  right: 15px;
+  margin-top: 2rem;
+}
+
+@media (max-width: 750px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  .solar-system {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #planets {
+    translate: 0 -30%;
+    overflow: hidden;
+    max-width: 360px;
+  }
+  .rotation {
+    animation: 0s;
+  }
+  .rotation-info {
+    display: none;
+  }
+  .planet-div {
+    border-color: transparent;
+  }
+  #sun-div {
+    cursor: default;
+  }
+  #venus-img {
+    translate: 0 5.41em;
+  }
+  #earth-img {
+    translate: 0 7.45em;
+  }
+  #mars-img {
+    translate: 0 8.7692307692em;
+  }
+  #jupiter-img {
+    translate: 0 11.7954545455em;
+  }
+  #saturn-img {
+    translate: 0 14.9166666667em;
+  }
+  #uranus-img {
+    translate: 0 17.91875em;
+  }
+  .goback-btn {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
+@media (max-height: 800px) {
+  footer {
+    position: relative;
+  }
+}
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -344,11 +404,6 @@ p, ol, il, button {
   100% {
     scale: 100%;
   }
-}
-footer {
-  position: fixed;
-  bottom: 5px;
-  right: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -13,11 +13,7 @@ type Props = {
 
 
 const QuestionCard: React.FC<Props> = ({ question, answers, callback, userAnswer, questionNr, totalQuestions}) => {
-    // const determineClass = () => {
-    //     if (userAnswer) {
-    //         return userAnswer?.answer === answer && userAnswer?.correctAnswer === answer ? "answer-btn green" : "answer-btn red"
-    //     }
-    // }
+    
 
     return (
         <div className="question-card">
@@ -25,7 +21,7 @@ const QuestionCard: React.FC<Props> = ({ question, answers, callback, userAnswer
             <p className="question">{question}</p>
             <div className="answers">{answers.map(answer => (
     
-                <button key={answer} disabled={userAnswer ? true : false} value={answer} onClick={callback} className={userAnswer?.correctAnswer === answer ? "answer-btn green" : "answer-btn"}>
+                <button key={answer} disabled={userAnswer ? true : false} value={answer} onClick={callback} className={userAnswer?.correctAnswer === answer ? "answer-btn correct-answer" : "answer-btn"}>
                     {answer}
                 </button>
     
